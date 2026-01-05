@@ -31,25 +31,32 @@ export default function CTA() {
         </h2>
 
         {/* Button */}
-        <button
-          className="
-            mt-12
-            w-[160px]
-            h-[30px]
-            sm:w-[180px]
-            sm:h-[50px]
-            rounded-md
-            text-[#010b11]
-            text-[18px]
-            sm:text-[20px]
-            font-medium
-            transition
-            hover:opacity-90
-          "
-          style={{ backgroundColor: "#03f8c5" }}
-        >
-          Join Now
-        </button>
+     <button
+  onClick={() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }}
+  className="
+    mt-12
+    w-[160px]
+    h-[30px]
+    sm:w-[180px]
+    sm:h-[50px]
+    rounded-md
+    text-[#010b11]
+    text-[18px]
+    sm:text-[20px]
+    font-medium
+    transition
+    hover:opacity-90
+  "
+  style={{ backgroundColor: "#03f8c5" }}
+>
+  Join Now
+</button>
+
       </div>
     </section>
   );
