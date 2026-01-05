@@ -1,19 +1,27 @@
 import MarketPanel from "./MarketPanel";
 import { FaApple, FaAndroid } from "react-icons/fa";
 import { BsQrCode } from "react-icons/bs";
+import Image from '../asset_svg/Line.svg';
 
 export default function Hero() {
     return (
         <section className="relative w-full min-h-screen lg:min-h-[800px] flex items-center overflow-hidden">
             {/* STATIC SVG BACKGROUND */}
-            <div className="absolute inset-0 -z-10 pointer-events-none">
+            {/* <div className="absolute inset-0 -z-10 pointer-events-none">
                 <img
                     src="/src/asset_svg/Line.svg"
                     alt=""
                     className="w-full h-full object-cover hero-svg"
                 />
-            </div>
+            </div> */}
 
+    <div className="absolute inset-0 -z-10 pointer-events-none">
+                <img
+                    src={Image}
+                    alt=""
+                    className="w-full h-full object-cover hero-svg"
+                />
+            </div>
             {/* Container to constrain width like a standard dashboard */}
             <div className="container mx-auto px-6 sm:px-12 lg:px-20 flex flex-col lg:flex-row items-center justify-between gap-12 py-20">
 
