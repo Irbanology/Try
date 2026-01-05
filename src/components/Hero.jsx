@@ -7,13 +7,6 @@ export default function Hero() {
     return (
         <section className="relative w-full min-h-screen lg:min-h-[800px] flex items-center overflow-hidden">
             {/* STATIC SVG BACKGROUND */}
-            {/* <div className="absolute inset-0 -z-10 pointer-events-none">
-                <img
-                    src="/src/asset_svg/Line.svg"
-                    alt=""
-                    className="w-full h-full object-cover hero-svg"
-                />
-            </div> */}
 
     <div className="absolute inset-0 -z-10 pointer-events-none">
                 <img
