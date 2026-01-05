@@ -33,7 +33,7 @@ export default function Hero() {
                     </p>
 
                     {/* Input + Button Group */}
-                    <div className="mt-10 flex flex-col sm:flex-row items-center gap-4">
+                    <div className="mt-10 flex flex-col sm:flex-row items-center gap-2">
                         <div className="relative w-full sm:w-[320px]">
                             <input
                                 placeholder="Email/Phone Number"
