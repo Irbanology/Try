@@ -1,13 +1,16 @@
-import { Search, Globe, Download } from "lucide-react";
+import { Search, Globe, Download, Menu } from "lucide-react";
 import LogoImg from "../asset_svg/Logo.png";
+import { useState } from "react";
 
 export default function Navbar() {
+  const [open, setOpen] = useState(false);
+
   return (
     <nav className="w-full bg-transparent sticky top-0 z-50">
-      <div className="flex items-center justify-between px-4 sm:px-6 lg:px-8 h-16">
+      <div className="flex items-center justify-between px-4 sm:px-8 h-16">
 
         {/* LEFT */}
-        <div className="flex items-center gap-6 lg:gap-10">
+        <div className="flex items-center gap-10">
           <div className="flex items-center gap-2">
             <img
               src={LogoImg}
@@ -19,8 +22,8 @@ export default function Navbar() {
             </span>
           </div>
 
-          {/* Desktop menu only */}
-          <ul className="hidden lg:flex items-center gap-6 text-sm text-gray-300">
+          {/* DESKTOP MENU */}
+          <ul className="hidden md:flex items-center gap-6 text-sm text-gray-300">
             <li className="hover:text-white cursor-pointer">Buy Crypto</li>
             <li className="hover:text-white cursor-pointer">Markets</li>
             <li className="hover:text-white cursor-pointer">LaunchPad</li>
@@ -31,31 +34,72 @@ export default function Navbar() {
         </div>
 
         {/* RIGHT */}
-        <div className="flex items-center gap-3 sm:gap-4">
+        <div className="flex items-center gap-4">
+
+          {/* SEARCH (always visible) */}
           <Search className="w-5 h-5 text-gray-300 hover:text-white cursor-pointer" />
 
-          {/* Login (text only, hide on very small screens if needed) */}
-          <button className="hidden sm:block text-sm font-medium text-gray-300 hover:text-white transition">
-            Login
-          </button>
+          {/* DESKTOP ACTIONS */}
+          <div className="hidden md:flex items-center gap-4">
+            <button className="text-sm font-medium text-gray-300 hover:text-white transition">
+              Login
+            </button>
 
-          {/* Sign Up */}
+            <button
+              className="px-4 py-1.5 rounded-md text-sm font-medium transition hover:brightness-110 active:scale-95"
+              style={{
+                backgroundColor: "#03f8c5",
+                color: "#010b11",
+                boxShadow: "0 0 20px rgba(3,248,197,0.25)",
+              }}
+            >
+              Sign Up
+            </button>
+
+            <Globe className="w-5 h-5 text-gray-300 hover:text-white cursor-pointer" />
+            <Download className="w-5 h-5 text-gray-300 hover:text-white cursor-pointer" />
+          </div>
+
+          {/* HAMBURGER (mobile only) */}
           <button
-            className="px-3 sm:px-4 py-1.5 rounded-md text-sm font-medium transition hover:brightness-110 active:scale-95"
-            style={{
-              backgroundColor: "#03f8c5",
-              color: "#010b11",
-              boxShadow: "0 0 20px rgba(3,248,197,0.25)",
-            }}
+            onClick={() => setOpen(!open)}
+            className="md:hidden text-gray-300 hover:text-white"
           >
-            Sign Up
+            <Menu className="w-6 h-6" />
           </button>
-
-          <Globe className="hidden sm:block w-5 h-5 text-gray-300 hover:text-white cursor-pointer" />
-          <Download className="hidden sm:block w-5 h-5 text-gray-300 hover:text-white cursor-pointer" />
         </div>
-
       </div>
+
+      {/* MOBILE MENU */}
+      {open && (
+        <div className="md:hidden px-6 pb-4 space-y-4 text-sm text-gray-300">
+          <div className="space-y-2">
+            <div className="hover:text-white cursor-pointer">Buy Crypto</div>
+            <div className="hover:text-white cursor-pointer">Markets</div>
+            <div className="hover:text-white cursor-pointer">LaunchPad</div>
+            <div className="hover:text-white cursor-pointer">Trade</div>
+          </div>
+
+          <div className="flex items-center gap-4 pt-2">
+            <button className="text-sm font-medium hover:text-white">
+              Login
+            </button>
+
+            <button
+              className="px-4 py-1.5 rounded-md text-sm font-medium"
+              style={{
+                backgroundColor: "#03f8c5",
+                color: "#010b11",
+              }}
+            >
+              Sign Up
+            </button>
+
+            <Globe className="w-5 h-5 hover:text-white cursor-pointer" />
+            <Download className="w-5 h-5 hover:text-white cursor-pointer" />
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
