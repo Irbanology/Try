@@ -2,6 +2,7 @@ import MarketPanel from "./MarketPanel";
 import { FaApple, FaAndroid } from "react-icons/fa";
 import { BsQrCode } from "react-icons/bs";
 import Image from '../asset_svg/Line.svg';
+import Image2 from '../asset_svg/Line-on.svg';
 
 export default function Hero() {
     return (
@@ -10,9 +11,9 @@ export default function Hero() {
 
     <div className="absolute inset-0 -z-10 pointer-events-none">
                 <img
-                    src={Image}
+                    src={Image2}
                     alt=""
-                    className="w-full h-full object-cover hero-svg"
+                    className="w-full h-full object-cover hero-svg opacity-10"
                 />
             </div>
             {/* Container to constrain width like a standard dashboard */}

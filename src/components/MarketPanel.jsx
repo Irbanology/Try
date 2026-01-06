@@ -1,7 +1,15 @@
 import { marketCoins, topGainers } from "../data/icons";
 
 const BORDER = "rgba(3,248,197,0.35)";
-const BG = "bg-black/10 backdrop-blur-sm";
+// const BG = "bg-black/10 backdrop-blur-sm";
+// const BG = "bg-[#010b11] backdrop-blur-sm";
+const BG = `
+  bg-[#010b11]/80
+  backdrop-blur-md
+  border border-white/20
+  shadow-[0_0_20px_rgba(225,255,255,0.06)]
+`;
+
 
 export default function MarketPanel() {
     return (

@@ -11,16 +11,17 @@ body {
 }
 
 body {
-  background:
-    radial-gradient(1200px 600px at 75% 25%, rgba(3, 248, 197, 0.12), transparent 60%),
-    radial-gradient(900px 500px at 20% 30%, rgba(3, 248, 197, 0.08), transparent 65%),
-    linear-gradient(180deg, #061822 0%, #010b11 65%);
-  color: white;
-  overflow-x: hidden;
+  background: #010b11;
+  /* color: white; */
+  /* overflow-x: hidden; */
 }
 
+/* radial-gradient(1200px 600px at 75% 25%, rgba(3, 248, 197, 0.12), transparent 60%),
+radial-gradient(900px 500px at 20% 30%, rgba(3, 248, 197, 0.08), transparent 65%),
+linear-gradient(180deg, #061822 0%, #010b11 65%); */
+
 .hero-svg {
-  color: #03f8c5;
+  /* color: #03f8c5; */
 }
 
 /* Target all SVG paths */
